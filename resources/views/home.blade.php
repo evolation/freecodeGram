@@ -7,16 +7,15 @@
             <img src="/svg/temp_profile.jpg" class="rounded-circle">
         </div>
         <div class="col-9 pt-5">
-            <div><h1>freecodeCamp</h1></div>
+            <div><h1>{{$user->username}}</h1></div>
             <div class="d-flex">
                 <div class="pe-5"><strong>153</strong> posts</div>
                 <div class="pe-5"><strong>23k</strong> followers</div>
                 <div class="pe-5"><strong>122</strong> following</div>
             </div>
-            <div class="pt-4 fw-bold">freecodecamp.org</div>
-            <div>We're a global community of millions of people learning to code together.
-                LearnToCodeRPG: https://www.freecodecamp.org/news/learn-to-code-rpg/</div>
-            <div><a href="https://www.pilones.de">www.pilones.de</a></div>
+            <div class="pt-4 fw-bold">{{$user->profile->title}}</div>
+            <div>{{$user->profile->description}}</div>
+            <div><a href="https://www.pilones.de">{{$user->profile->url ?? 'N/A'}}</a></div>
         </div>
 
     </div>
