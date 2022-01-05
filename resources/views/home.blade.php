@@ -2,22 +2,37 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
+    <div class="row">
+        <div  class="col-3 p-5">
+            <img src="/svg/temp_profile.jpg" class="rounded-circle">
         </div>
+        <div class="col-9 pt-5">
+            <div><h1>freecodeCamp</h1></div>
+            <div class="d-flex">
+                <div class="pe-5"><strong>153</strong> posts</div>
+                <div class="pe-5"><strong>23k</strong> followers</div>
+                <div class="pe-5"><strong>122</strong> following</div>
+            </div>
+            <div class="pt-4 fw-bold">freecodecamp.org</div>
+            <div>We're a global community of millions of people learning to code together.
+                LearnToCodeRPG: https://www.freecodecamp.org/news/learn-to-code-rpg/</div>
+            <div><a href="https://www.pilones.de">www.pilones.de</a></div>
+        </div>
+
     </div>
+
+    <div class="row pt-5" >
+        <div class="col-4">
+            <img class="w-100" src="https://www.theknot.com/tk-media/images/8d7f9239-ddb5-47e7-8c81-eb39283c8262~rs_768.h">
+        </div>
+        <div class="col-4">
+            <img class="w-100" src="https://cdn.eathappyproject.com/wp-content/uploads/2021/02/The-Most-Beautiful-Flowers-in-the-World-With-Name-and-Picture.jpg">
+        </div>
+        <div class="col-4">
+            <img class="w-100" src="https://cdn.eathappyproject.com/wp-content/uploads/2021/08/Rose.jpg">
+        </div>
+
+    </div>
+
 </div>
 @endsection
