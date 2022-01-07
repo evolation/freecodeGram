@@ -17,7 +17,7 @@
                     <label for="title" class="col-md-4 col-form-label">Title</label>
                     <input id="title" name="title" type="text"
                            class="form-control @error('title') is-invalid @enderror"
-                           value="{{ old('title') }}"
+                           value="{{ old('title') ?? $user->profile->title}}"
                            autocomplete="title" autofocus>
                     @error('title')
                     <span class="invalid-feedback" role="alert">
@@ -32,7 +32,7 @@
                 <label for="description" class="col-md-4 col-form-label">Description</label>
                 <input id="description" name="description" type="text"
                        class="form-control @error('description') is-invalid @enderror"
-                       value="{{ old('description') }}"
+                       value="{{ old('description') ?? $user->profile->description}}"
                        autocomplete="description" autofocus>
                 @error('description')
                 <span class="invalid-feedback" role="alert">
@@ -45,7 +45,7 @@
                 <label for="url" class="col-md-4 col-form-label">URL</label>
                 <input id="url" name="url" type="text"
                        class="form-control @error('url') is-invalid @enderror"
-                       value="{{ old('url') }}"
+                       value="{{ old('url') ?? $user->profile->url}}"
                        autocomplete="url" autofocus>
                 @error('url')
                 <span class="invalid-feedback" role="alert">
