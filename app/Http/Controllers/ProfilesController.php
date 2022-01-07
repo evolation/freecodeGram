@@ -3,16 +3,21 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class ProfilesController extends Controller
 {
-    public function index($user_id)
+    public function index(User $user)
     {
-        $user = User::findOrFail($user_id);
+        return view('profiles.index',compact('user'));
+    }
 
-        return view('home',[
-            'user' => $user
-        ]);
+    public function edit(User $user)
+    {
+        return view('profiles.edit',compact('user'));
+    }
+
+    public function update(User $user)
+    {
+        dd($user);
     }
 }

@@ -7,9 +7,13 @@
             <img src="/svg/temp_profile.jpg" class="rounded-circle">
         </div>
         <div class="col-9 pt-5">
-            <div><h1>{{$user->username}}</h1></div>
+            <div class='d-flex justify-content-between align-items-baseline'>
+                <h1>{{$user->username}}</h1>
+                <a href="/p/create">Add New Post</a>
+            </div>
+            <a href="/profile/{{$user->id}}/edit">Edit profile</a>
             <div class="d-flex">
-                <div class="pe-5"><strong>153</strong> posts</div>
+                <div class="pe-5"><strong>{{$user->posts()->count()}}</strong> posts</div>
                 <div class="pe-5"><strong>23k</strong> followers</div>
                 <div class="pe-5"><strong>122</strong> following</div>
             </div>
@@ -21,15 +25,14 @@
     </div>
 
     <div class="row pt-5" >
-        <div class="col-4">
-            <img class="w-100" src="https://www.theknot.com/tk-media/images/8d7f9239-ddb5-47e7-8c81-eb39283c8262~rs_768.h">
+
+        @foreach ($user->posts as $post )
+        <div class="col-4 pb-4">
+            <a href="/p/{{$post->id}}">
+                <img class="w-100" src="/storage/{{$post->image}}">
+            </a>
         </div>
-        <div class="col-4">
-            <img class="w-100" src="https://cdn.eathappyproject.com/wp-content/uploads/2021/02/The-Most-Beautiful-Flowers-in-the-World-With-Name-and-Picture.jpg">
-        </div>
-        <div class="col-4">
-            <img class="w-100" src="https://cdn.eathappyproject.com/wp-content/uploads/2021/08/Rose.jpg">
-        </div>
+        @endforeach
 
     </div>
 
