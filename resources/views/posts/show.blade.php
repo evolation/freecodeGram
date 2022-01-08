@@ -20,8 +20,7 @@
                                 <span class="text-dark">{{ $post->user->username }}</span>
                             </a>
                             <span class="pe-1 ps-1"> &#10172; </span>
-                            <a class="text-decoration-none" href="#" class="pl-3">Follow</a>
-                        </div>
+                            <follow-button user-id="{{ $post->user->id }}" follows="{{ $follows }}"></follow-button>                        </div>
                     </div>
 
 
